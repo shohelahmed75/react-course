@@ -32,10 +32,10 @@ function Tabbed({ content }) {
   return (
     <div>
       <div className="tabs">
-        <Tab num={0} activeTab={activeTab} onClick={setActiveTab} />
-        <Tab num={1} activeTab={activeTab} onClick={setActiveTab} />
-        <Tab num={2} activeTab={activeTab} onClick={setActiveTab} />
-        <Tab num={3} activeTab={activeTab} onClick={setActiveTab} />
+        <Tab num={0} activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab num={1} activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab num={2} activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Tab num={3} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
       {activeTab <= 2 ? (
@@ -51,7 +51,7 @@ function Tab({ num, activeTab, onClick }) {
   return (
     <button
       className={activeTab === num ? "tab active" : "tab"}
-      onClick={() => onClick(num)}
+      onClick={() => setActiveTab(num)}
     >
       Tab {num + 1}
     </button>
